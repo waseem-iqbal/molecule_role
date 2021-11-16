@@ -1,28 +1,19 @@
----
-<<<<<<< HEAD
+
 ## pre_tasks
-=======
+
 ## pre_tasks for os variables
->>>>>>> 177223c9d5c8d1016a4823f58aa95d015d9cffd1
 - name: Override Apache vars for Red Hat.
   set_fact:
     apache_package: httpd
     apache_service: httpd
   when: ansible_os_family == 'RedHat'
-<<<<<<< HEAD
 
-
-=======
->>>>>>> 177223c9d5c8d1016a4823f58aa95d015d9cffd1
 - name: Update apt cache (on Debian).
   apt:
     update_cache: true
     cache_valid_time: 3600
   when: ansible_os_family == 'Debian'
-<<<<<<< HEAD
 
-=======
->>>>>>> 177223c9d5c8d1016a4823f58aa95d015d9cffd1
 ## tasks
 - name: Ensure Apache is installed.
   package:
