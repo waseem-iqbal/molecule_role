@@ -29,8 +29,6 @@
 
 
   tasks:
-<<<<<<< HEAD
-
 
 #    - shell: cat /etc/os-release
 #    - name: Upgrade all packages on servers
@@ -40,10 +38,7 @@
 #        force_apt_get: yes
 #      when: ansible_os_family == 'ubuntu'
 
-
-=======
   ## tasks
->>>>>>> 177223c9d5c8d1016a4823f58aa95d015d9cffd1
     - name: Ensure Apache is installed.
       package:
         name: "{{ apache_package }}"
