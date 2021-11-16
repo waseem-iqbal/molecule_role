@@ -1,0 +1,10 @@
+---
+<<<<<<< HEAD
+apache_package: apache2
+apache_service: apache2
+=======
+MOLECULE_DISTRO: 
+  - centos7
+  - centos8
+  - ubuntu2004
+>>>>>>> 177223c9d5c8d1016a4823f58aa95d015d9cffd1
