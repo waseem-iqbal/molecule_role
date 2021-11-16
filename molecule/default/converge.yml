@@ -5,19 +5,3 @@
     - name: "Include role molecule_testing"
       include_role:
         name: "molecule_role"
-#    - name: Update apt cache (on Debian).
-#      apt:
-#        update_cache: true
-#        cache_valid_time: 3600
-#      when: ansible_os_family == 'Debian'
-#
-#- import_playbook: ../../main.yml
-#        name: "molecule_testing"
-#    - name: Update apt cache (on Debian).
-#      apt:
-#        update_cache: true
-#        cache_valid_time: 3600
-#      when: ansible_os_family == 'Debian'
-#
-##- import_playbook: ../../main.yml
-
