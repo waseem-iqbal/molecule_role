@@ -2,7 +2,7 @@
 - name: Install Apache.
   hosts: all
   become: true
-
+  
   vars:
     apache_package: 'apache2'
     apache_service: 'apache2'
@@ -20,16 +20,12 @@
         apache_service: httpd
       when: ansible_os_family == 'RedHat'
 
-
     - name: Update apt cache (on Debian).
       apt:
         update_cache: true
         cache_valid_time: 3600
       when: ansible_os_family == 'Debian'
-
-
-  tasks:
-
+ # tasks:
 #    - shell: cat /etc/os-release
 #    - name: Upgrade all packages on servers
 #      apt: 
@@ -37,13 +33,11 @@
 #        state: present
 #        force_apt_get: yes
 #      when: ansible_os_family == 'ubuntu'
-
-  ## tasks
+  tasks
     - name: Ensure Apache is installed.
       package:
         name: "{{ apache_package }}"
         state: present
-
     - name: Copy a web page.
       copy:
         content: |
