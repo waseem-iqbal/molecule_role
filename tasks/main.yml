@@ -1,25 +1,21 @@
-
+---
 ## pre_tasks
-
 ## pre_tasks for os variables
 - name: Override Apache vars for Red Hat.
   set_fact:
     apache_package: httpd
     apache_service: httpd
   when: ansible_os_family == 'RedHat'
-
 - name: Update apt cache (on Debian).
   apt:
     update_cache: true
     cache_valid_time: 3600
   when: ansible_os_family == 'Debian'
-
 ## tasks
 - name: Ensure Apache is installed.
   package:
     name: "{{ apache_package }}"
     state: present
-
 - name: Copy a web page.
   copy:
     content: |
