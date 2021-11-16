@@ -33,7 +33,7 @@
 #        state: present
 #        force_apt_get: yes
 #      when: ansible_os_family == 'ubuntu'
-  tasks
+  tasks:
     - name: Ensure Apache is installed.
       package:
         name: "{{ apache_package }}"
