@@ -1,0 +1,8 @@
+---
+apache_package: apache2
+apache_service: apache2
+MOLECULE_DISTRO: 
+  - centos7
+  - centos8
+  - ubuntu2004
+

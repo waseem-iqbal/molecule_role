@@ -1,0 +1,38 @@
+
+## pre_tasks
+
+## pre_tasks for os variables
+- name: Override Apache vars for Red Hat.
+  set_fact:
+    apache_package: httpd
+    apache_service: httpd
+  when: ansible_os_family == 'RedHat'
+
+- name: Update apt cache (on Debian).
+  apt:
+    update_cache: true
+    cache_valid_time: 3600
+  when: ansible_os_family == 'Debian'
+
+## tasks
+- name: Ensure Apache is installed.
+  package:
+    name: "{{ apache_package }}"
+    state: present
+
+- name: Copy a web page.
+  copy:
+    content: |
+      <html>
+      <head><title>Hello world!</title></head>
+      <body>Welcome to Ansible Molecule Demo</body>
+      </html>
+    dest: "/var/www/html/index.html"
+    mode: 0664
+  notify: restart apache
+
+- name: Ensure Apache is running and starts at boot.
+  service:
+    name: "{{ apache_service }}"
+    state: started
+    enabled: true
