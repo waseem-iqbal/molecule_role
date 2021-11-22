@@ -29,12 +29,12 @@ galaxy_info:
   #
 
   platforms:
-   - name: centos
-     versions:
-     - 7
-   - name: ubuntu
-     versions:
-     - 20.04
+    - name: centos
+      versions:
+        - 7
+    - name: ubuntu
+      versions:
+        - 20.04
   galaxy_tags: []
   # List tags for your role here, one per line. A tag is a keyword that describes
   # and categorizes the role. Users find roles by searching for tags. Be sure to
