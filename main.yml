@@ -22,12 +22,12 @@
         cache_valid_time: 3600
       when: ansible_os_family == 'Debian'
   tasks:
-#    - shell: cat /etc/os-release
+    # - shell: cat /etc/os-release
     - name: Upgrade all packages on servers
-      apt: 
+      apt:
         name: "{{ apache_package }}"
         state: present
-        force_apt_get: yes
+        force_apt_get: true
       when: ansible_os_family == 'ubuntu'
 
     - name: Ensure Apache is installed.
