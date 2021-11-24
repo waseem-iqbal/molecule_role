@@ -1,7 +1,7 @@
 ---
 - name: Converge
   hosts: all
- # tasks:
-  #  - name: "Include mywebapp"
-  #    include_role:
-  #      name: "molecule_testing"
+  tasks:
+    #  - name: "Include mywebapp"
+    #    include_role:
+    #      name: "molecule_role"
