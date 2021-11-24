@@ -31,7 +31,7 @@ provisioner:
   name: ansible
   config_options:
     defaults:
-      deprecation_warnings: False
+      deprecation_warnings: false
       interpreter_python: auto_silent
       callback_whitelist: profile_tasks, timer, yaml
     ssh_connection:
@@ -64,4 +64,4 @@ scenario:
 lint: |
   set -e
   yamllint .
-  ansible-lint --exclude .travis.yml  --exclude ./main.yml . 
+  ansible-lint --exclude .travis.yml  --exclude ./main.yml .
